@@ -9,9 +9,7 @@ const Qrscan =()=>{
     }
 
     const handleScan = (result) =>{
-        if(result){
-            setResult(result);
-        }
+         setResult(result);
     }
     
     const previewStyle = {
@@ -26,7 +24,15 @@ const Qrscan =()=>{
                 delay={500}
                 style={previewStyle}
                 onError={handleError}
-                onScan={handleScan}
+                onResult={(result, error) => {
+                    if (!!result) {
+                        handleScan(result?.text);
+                    }
+          
+                    if (!!error) {
+                      console.info(error);
+                    }
+                  }}
             />
             <div className="styles.result">{result}</div>
         </div>
