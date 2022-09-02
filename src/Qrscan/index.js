@@ -19,7 +19,7 @@ const Qrscan =()=>{
 
     return (
         <div className="styles.container">
-           
+           <input type="file" accept="image/*" capture="environment"></input>
             <QrReader 
                 delay={500}
                 style={previewStyle}
