@@ -24,6 +24,9 @@ const Qrscan =()=>{
                 delay={500}
                 style={previewStyle}
                 onError={handleError}
+                constraints={{
+                    facingMode: 'user'
+                  }}
                 onResult={(result, error) => {
                     if (!!result) {
                         handleScan(result?.text);
