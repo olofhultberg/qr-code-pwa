@@ -32,7 +32,7 @@ const Qrscan =()=>{
     }
 
     return (
-        <div className="styles.container">
+        <div style={{marginTop:"-40px"}} className="styles.container">
             <QrReader 
                 delay={500}
                 style={previewStyle}
@@ -44,19 +44,18 @@ const Qrscan =()=>{
                     if (!!result) {
                         handleScan(result?.text);
                     }
-          
                     if (!!error) {
                       console.info(error);
                     }
                   }}
             />
             <p style={{marginTop:"-35px", color:"gray", textAlign:"center"}}><span style={{color: "black"}}>QR data: </span>{result}</p>   
-            <div style={{fontSize:"20px", textAlign:"center"}}>
-                <p >Serial number:</p>
+            <div style={{fontSize:"15px", textAlign:"center"}}>
+                <p style={{marginTop:"-10px"}}>Serial number:</p>
                 <p style={{fontWeight:"bold", marginTop:"-20px"}}>{serial}</p>
-                <p>Hose ID:</p>
+                <p style={{marginTop:"-10px"}}>Hose ID:</p>
                 <p style={{fontWeight:"bold", marginTop:"-20px"}}>{id}</p>
-                <p>Date:</p>
+                <p style={{marginTop:"-10px"}}>Date:</p>
                 <p style={{fontWeight:"bold", marginTop:"-20px"}}>{id ? date : null}</p>
                 <p style={{fontWeight:"bold", marginTop:"-20px"}}>{id ? "(Fetched from database)" : null}</p>
             </div>

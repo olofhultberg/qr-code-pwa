@@ -6,7 +6,7 @@ function App() {
   return (
     <div>
       <h2 style={{ textAlign:"center", backgroundColor:"yellow"}}>Dunlop Hiflex Proof of concept</h2>
-      <h1 style={{ textAlign:"center"}}>Scan QR-code</h1>
+      <h1 style={{ textAlign:"center", marginTop:"-10px"}}>Scan QR-code</h1>
       <Qrscan />
       <PWAPrompt 
         delay={1000} 
