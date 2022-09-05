@@ -27,17 +27,17 @@ const Qrscan =()=>{
     }
     
     const previewStyle = {
-        height: 200,
-        width: 200,
+        height: 250,
+        width: 250,
         
     }
 
     return (
         <div className="styles.container">
-           <div style={{display: id ? 'none' : 'block' }}>
+           <div style={{display: id ? 'none' : 'flex', justifyContent: "center" }}>
             <QrReader 
                     delay={500}
-                    style={previewStyle}
+                    containerStyle={previewStyle}
                     onError={handleError}
                     constraints={{
                         facingMode: 'environment'
