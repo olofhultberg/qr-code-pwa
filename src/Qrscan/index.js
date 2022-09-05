@@ -29,27 +29,31 @@ const Qrscan =()=>{
     const previewStyle = {
         height: 200,
         width: 200,
+        
     }
 
     return (
         <div style={{marginTop:"-40px"}} className="styles.container">
+           <div style={{display: id ? 'none' : 'block' }}>
             <QrReader 
-                delay={500}
-                style={previewStyle}
-                onError={handleError}
-                constraints={{
-                    facingMode: 'environment'
-                  }}
-                onResult={(result, error) => {
-                    if (!!result) {
-                        handleScan(result?.text);
-                    }
-                    if (!!error) {
-                      console.info(error);
-                    }
-                  }}
-            />
-            <p style={{marginTop:"-35px", color:"gray", textAlign:"center"}}><span style={{color: "black"}}>QR data: </span>{result}</p>   
+                    delay={500}
+                    style={previewStyle}
+                    onError={handleError}
+                    constraints={{
+                        facingMode: 'environment'
+                    }}
+                    onResult={(result, error) => {
+                        if (!!result) {
+                            handleScan(result?.text);
+                        }
+                        if (!!error) {
+                        console.info(error);
+                        }
+                    }}
+                />
+           </div>
+           <div style={{display: !id ? 'none' : 'block' }}>
+           <p style={{marginTop:"55px", color:"gray", textAlign:"center"}}><span style={{color: "black"}}>QR data: </span>{result}</p>   
             <div style={{fontSize:"15px", textAlign:"center"}}>
                 <p style={{marginTop:"-10px"}}>Serial number:</p>
                 <p style={{fontWeight:"bold", marginTop:"-20px"}}>{serial}</p>
@@ -69,6 +73,8 @@ const Qrscan =()=>{
                     Reset
                 </div>
             </div>
+            </div> 
+            
             
         </div>
         
