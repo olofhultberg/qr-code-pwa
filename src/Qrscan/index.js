@@ -33,7 +33,7 @@ const Qrscan =()=>{
     }
 
     return (
-        <div style={{marginTop:"-40px"}} className="styles.container">
+        <div className="styles.container">
            <div style={{display: id ? 'none' : 'block' }}>
             <QrReader 
                     delay={500}
