@@ -25,7 +25,7 @@ const Qrscan =()=>{
                 style={previewStyle}
                 onError={handleError}
                 constraints={{
-                    facingMode: 'user'
+                    facingMode: 'environment'
                   }}
                 onResult={(result, error) => {
                     if (!!result) {
