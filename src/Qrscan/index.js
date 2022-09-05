@@ -27,8 +27,8 @@ const Qrscan =()=>{
     }
     
     const previewStyle = {
-        height: 240,
-        width: 320,
+        height: 200,
+        width: 200,
     }
 
     return (
